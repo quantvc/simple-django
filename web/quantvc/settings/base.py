@@ -1,3 +1,5 @@
+# encoding:utf-8
+
 """
 Django settings for quantvc project.
 
@@ -10,6 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -36,7 +39,18 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.formtools',
 )
+
+EXTENSION_APPS = (
+    "django_extensions",
+)
+WEB_APPS = (
+    'apps.web',
+)
+
+INSTALLED_APPS += (EXTENSION_APPS + WEB_APPS)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
