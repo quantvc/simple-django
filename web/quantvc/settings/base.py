@@ -29,6 +29,11 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LANGUAGES = (
+    ('zh-cn', u'中文'),
+    ('en', u'English'),
+)
+
 
 # Application definition
 
@@ -68,7 +73,6 @@ ROOT_URLCONF = 'quantvc.urls'
 
 WSGI_APPLICATION = 'quantvc.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -98,19 +102,32 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT=os.path.join(BASE_DIR,"static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # date time
-DATE_FORMAT="Y-m-d"
+DATE_FORMAT = "Y-m-d"
 
-DATETIME_FORMAT="Y-m-d H:i:s"
+DATETIME_FORMAT = "Y-m-d H:i:s"
 
-#
-FILE_UPLOAD_MAX_MEMORY_SIZE=2621440
+# FILE
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440
+
+# Template dirs
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "templates"),
+)
+
+LOGGING = {
+
+}
 
 
 
