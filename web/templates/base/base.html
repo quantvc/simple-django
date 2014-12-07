@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="{{ LANG }}">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
-    <title></title>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    {% block site_css %}
+    {% endblock %}
 </head>
 <body>
+{% block content %}
+{% endblock %}
+
+{% block site_js %}
+{% endblock %}
 
 </body>
 </html>

@@ -45,7 +45,9 @@ INSTALLED_APPS = (
 
 EXTENSION_APPS = (
     "django_extensions",
+    "debug_toolbar",
 )
+
 WEB_APPS = (
     'apps.web',
 )
@@ -95,3 +97,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT=os.path.join(BASE_DIR,"static")
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+# date time
+DATE_FORMAT="Y-m-d"
+
+DATETIME_FORMAT="Y-m-d H:i:s"
+
+#
+FILE_UPLOAD_MAX_MEMORY_SIZE=2621440
+
+
+
+
+
