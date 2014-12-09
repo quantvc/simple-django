@@ -33,11 +33,43 @@ LANGUAGES = (
     ('zh-cn', u'中文'),
     ('en', u'English'),
 )
+# Django allauth
+SITE_ID = 1
+
+# django guardian
+ANONYMOUS_USER_ID = -1
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    # django allauth
+    'allauth.account.context_processors.account',
+    'allauth.socialaccount.context_processors.socialaccount',
+)
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth`
+    "allauth.account.auth_backends.AuthenticationBackend",
+    # guardian
+    'guardian.backends.ObjectPermissionBackend',
+    # userena
+    'userena.backends.UserenaAuthenticationBackend',
+
+)
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.sites',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +83,13 @@ INSTALLED_APPS = (
 EXTENSION_APPS = (
     "django_extensions",
     "debug_toolbar",
+    'mptt',
+    'crispy_forms',
+    'guardian',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'accounts',
 )
 
 WEB_APPS = (
@@ -83,6 +122,8 @@ DATABASES = {
     }
 }
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -109,12 +150,10 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # date time
 DATE_FORMAT = "Y-m-d"
-
 DATETIME_FORMAT = "Y-m-d H:i:s"
 
 # FILE
@@ -124,6 +163,15 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
 )
+
+# email
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'yourgmailaccount@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourgmailpassword'
+
 
 LOGGING = {
 
