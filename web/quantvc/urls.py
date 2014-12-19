@@ -14,7 +14,7 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^accounts/', include('userena.urls')),
                        url(r'^messages/', include('userena.contrib.umessages.urls')),
-                       # url(r'^accounts/', include('allauth.urls')),
+                       url(r'^auth/', include('allauth.urls')),
                        url(r'^i18n/', include('django.conf.urls.i18n')),
 
 )

@@ -62,9 +62,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-    # django allauth
-    # 'allauth.account.context_processors.account',
-    # 'allauth.socialaccount.context_processors.socialaccount',
+     # django allauth
+    'allauth.account.context_processors.account',
+    'allauth.socialaccount.context_processors.socialaccount',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -73,6 +73,9 @@ AUTHENTICATION_BACKENDS = (
     # django guardian
     'guardian.backends.ObjectPermissionBackend',
     'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 # Application definition
@@ -95,6 +98,11 @@ EXTENSION_APPS = (
     "guardian",
     "userena",
     "userena.contrib.umessages",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # 'allauth.socialaccount.providers.weibo',
 
     # 'mptt',
     # 'crispy_forms',
