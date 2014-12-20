@@ -1,5 +1,5 @@
 django>=1.7
-django-grappelli>=2.6.3
+django-suit
 django-extensions>=1.4.8
 django-debug-toolbar>=1.2.2
 easy-thumbnails>=2.2
@@ -7,17 +7,17 @@ django-guardian>=1.2.4
 django-userena>=1.3.1
 django-allauth>=0.18.0
 django-cacheops>=2.2.1
+django-redis
+django-image-cropping
+django-imagekit
+django-crispy-forms>=1.4.0
+django-secure
+django-taggit>=0.12.1
+django-rq
+django-filter
+
 ###
 
 django-mptt>=0.6.1
 
-django-taggit>=0.12.1
-django-crispy-forms>=1.4.0
 
-
-
-django-oauth-toolkit>=0.7.2
-
-django-secure
-django-celery
-django-image-cropping 

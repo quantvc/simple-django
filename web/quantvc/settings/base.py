@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -62,7 +62,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-     # django allauth
+    # django allauth
     'allauth.account.context_processors.account',
     'allauth.socialaccount.context_processors.socialaccount',
 )
@@ -101,16 +101,14 @@ EXTENSION_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    # 'allauth.socialaccount.providers.weibo',
+    "django_filters",
+    "taggit",
+    "crispy_forms",
+    "imagekit",
+    "django_rq",
+    "djangosecure",
 
     # 'mptt',
-    # 'crispy_forms',
-    # 'guardian',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'accounts',
 )
 
 WEB_APPS = (
@@ -123,6 +121,7 @@ INSTALLED_APPS += (EXTENSION_APPS + WEB_APPS)
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    "djangosecure.middleware.SecurityMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -182,6 +181,12 @@ EMAIL_HOST_PASSWORD = ''
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    "formatters": {
+        "rq_console": {
+            "format": "%(asctime)s %(message)s",
+            "datefmt": "%H:%M:%S",
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
@@ -192,7 +197,14 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        "rq_console": {
+            "level": "DEBUG",
+            "class": "rq.utils.ColorizingStreamHandler",
+            "formatter": "rq_console",
+            "exclude": ["%(asctime)s"],
+        },
+
     },
     'loggers': {
         'django.request': {
@@ -200,8 +212,14 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        "rq.worker": {
+            "handlers": ["rq_console"],
+            "level": "DEBUG"
+        },
     }
 }
 
+# security
+SESSION_COOKIE_SECURE = True
 
 
