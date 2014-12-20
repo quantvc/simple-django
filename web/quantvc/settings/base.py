@@ -81,7 +81,7 @@ AUTHENTICATION_BACKENDS = (
 # Application definition
 INSTALLED_APPS = (
     'django.contrib.sites',
-    'grappelli',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

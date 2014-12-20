@@ -2,7 +2,6 @@
 
 from .base import *
 
-
 # userea
 AUTH_PROFILE_MODULE = "accounts.Profile"
 USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
