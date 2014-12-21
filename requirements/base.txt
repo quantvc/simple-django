@@ -15,6 +15,8 @@ django-secure
 django-taggit>=0.12.1
 django-rq
 django-filter
+django-rosetta
+
 
 ###
 

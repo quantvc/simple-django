@@ -15,7 +15,9 @@ urlpatterns = patterns('',
                        url(r'^messages/', include('userena.contrib.umessages.urls')),
                        url(r'^auth/', include('allauth.urls')),
                        url(r'^i18n/', include('django.conf.urls.i18n')),
+                       url(r'^rosetta/', include('rosetta.urls')),
                        url(r'^django-rq/', include('django_rq.urls')),
+
 )
 
 

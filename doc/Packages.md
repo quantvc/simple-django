@@ -117,10 +117,32 @@ django-braces: Mixins for Django's class-based views.
 [Document: django-braces](http://django-braces.readthedocs.org/en/latest/index.html)
 
 
-## Translation
-
 ## Testing
 
 django-nose
+
+[Github: django-nose](https://github.com/django-nose/django-nose/)
+[Document: django-nose](https://github.com/django-nose/django-nose/)
+
+django-coverage
+
+[Github: django-coverage](https://bitbucket.org/kmike/django-coverage)
+[Document: django-coverage](https://bitbucket.org/kmike/django-coverage)
+
+
+## Translation
+
+django-rosetta
+
+[Github: django-rosetta](https://github.com/mbi/django-rosetta)
+[Document: django-rosetta](https://github.com/mbi/django-rosetta)
+
+
+
+
+
+
+
+
 
 

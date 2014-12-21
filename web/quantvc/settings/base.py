@@ -107,6 +107,7 @@ EXTENSION_APPS = (
     "imagekit",
     "django_rq",
     "djangosecure",
+    "rosetta",
 
     # 'mptt',
 )
@@ -220,6 +221,7 @@ LOGGING = {
 }
 
 # security
-SESSION_COOKIE_SECURE = True
+# TODO: bugs! If set True , can't login the admin!
+SESSION_COOKIE_SECURE = False
 
 
