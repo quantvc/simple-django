@@ -142,8 +142,19 @@ WSGI_APPLICATION = 'quantvc.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "quantvc",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+        "USER": "root",
+        "PASSWORD": "1qaz",
+        "OPTIONS": {
+            "init_command": "SET storage_engine=INNODB",
+        },
+        "TEST": {
+            'CHARSET': "utf8",
+            'COLLATION': "utf8_general_ci",
+        }
     }
 }
 
@@ -206,7 +217,6 @@ LOGGING = {
             "formatter": "rq_console",
             "exclude": ["%(asctime)s"],
         },
-
     },
     'loggers': {
         'django.request': {
