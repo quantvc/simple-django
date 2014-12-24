@@ -138,9 +138,16 @@ django-rosetta
 [Document: django-rosetta](https://github.com/mbi/django-rosetta)
 
 
+## Model Extension
 
+django model extension 
 
+[Github: django-mptt](https://github.com/django-mptt/django-mptt/)
+[Document: django-mptt](http://django-mptt.github.io/django-mptt/)
 
+django model utils
+[Github: django-model-utils](https://github.com/carljm/django-model-utils/)
+[Document: django-model-uitls](https://django-model-utils.readthedocs.org)
 
 
 

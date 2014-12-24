@@ -109,8 +109,7 @@ EXTENSION_APPS = (
     "django_rq",
     "djangosecure",
     "rosetta",
-
-    # 'mptt',
+    'mptt',
 )
 
 WEB_APPS = (
