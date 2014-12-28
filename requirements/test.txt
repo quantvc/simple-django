@@ -1,0 +1,6 @@
+coverage
+pylint
+pep8
+nose
+django-nose
+django-coverage
