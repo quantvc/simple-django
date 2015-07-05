@@ -37,6 +37,13 @@ Permission Control : django-guardian
 [Github: django-guardian](https://github.com/lukaszb/django-guardian)  
 [Document: django-guardian](http://django-guardian.rtfd.org/)
 
+# Oauth2
+
+Oauth2 Toolkit : django-oauth-toolkit
+
+[Github:django-oauth-toolkit](https://github.com/evonove/django-oauth-toolkit)
+[Document: django-oauth-toolkit](https://django-oauth-toolkit.readthedocs.org/en/latest/)
+
 ## Image
 
 Image:easy-thumbnails
@@ -77,6 +84,15 @@ django-secure
 
 [Github: django-secure](https://github.com/carljm/django-secure/)  
 [Document: django-secure](http://django-secure.readthedocs.org/en/v0.1.2/)
+
+
+## SEO
+managing robots.txt files following the robots exclusion protocol
+
+[Github:django-robots](https://github.com/jezdez/django-robots)
+[Document:django-rbots](http://django-robots.readthedocs.org)
+
+
 
 ## Tagging
 
@@ -149,7 +165,16 @@ django model utils
 [Github: django-model-utils](https://github.com/carljm/django-model-utils/)
 [Document: django-model-uitls](https://django-model-utils.readthedocs.org)
 
+# Extra  Views
 
+[Github:django-extra-view](https://django-extra-views.readthedocs.org/en/latest/)
+[Document:django-extra-view](https://django-extra-views.readthedocs.org/en/latest/)
+
+
+
+# HightLight Program Language Code
+
+[Pygments](http://pygments.org)
 
 
 

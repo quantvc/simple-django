@@ -1,0 +1,25 @@
+
+
+server {
+       listen 80;
+       server_name www.quant.vc quant.vc;
+       access_log /home/web/logs/access_log/access.log;
+       error_log /home/web/logs/error_log/error.log;
+       charset utf-8;
+
+       root /home/web/website/;
+
+       location / {
+           uwsgi_pass 127.0.0.1:3400;
+           include uwsgi_params;
+       }
+       location /static/ {
+          alias /home/web/website/web/quantvc/static/;
+       }
+       location /media/ {
+          alias /home/web/website/web/quantvc/media/;
+       }
+       error_page 400 403 404 /static/400.html;
+       error_page 500 502 503 504 /static/500.html
+
+}
