@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css " type="text/css">
+    <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" type="text/css">
+
+    <script language="javascript" src="{{ STATIC_URL }}js/jquery-2.1.1.js"></script>
+    <script language="javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
+
+    {% block head %}{% endblock %}
+    {% block site_css %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+{% block body %}
+
+{% endblock %}
+
+{% block site_js %}
+{% endblock %}
+</body>
+
+</html>
